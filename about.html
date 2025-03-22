@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Nishant Kumar</title>
+    <title>✨ Nishant Kumar 😊</title>
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="style.css">
@@ -47,7 +47,8 @@
     <header class="z-10 pointer-events-none flex items-center justify-between w-full px-4 mt-4 max-w-screen-xl mx-auto">
 
         <!-- logo -->
-        <svg width="60" height="60" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="60" height="60" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="transition-transform duration-300 hover:scale-110 hover:rotate-6">
             <g clip-path="url(#clip0_1115_5227)">
                 <path
                     d="M100.106 97.2864C100.106 97.2864 98.7366 80.2298 98.7366 57.4874C97.0437 40.4505 93.5587 24.2252 84.3494 23.4123C81.0575 23.1218 78.0415 25.7242 75.4141 30.6937C80.3259 13.7045 100.106 0 100.106 0C100.106 0 119.887 13.7045 124.798 30.6937C122.171 25.7242 119.155 23.1218 115.863 23.4123C106.654 24.2252 102.956 40.4505 101.263 57.4874C101.263 80.2298 100.106 97.2864 100.106 97.2864Z"
@@ -190,7 +191,23 @@
 
             <!-- About Me Content -->
             <div class="w-full md:w-1/2 text-center md:text-left">
-                <p class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+
+
+                <p id="typing-text"
+                    class="text-3xl sm:text-xl md:text-2xl text-[#ab51e7] leading-relaxed print:text-black print:font-serif print:text-lg hover:text-red-600 hover:text-4xl transition-all duration-300">
+                </p>
+
+
+                <p
+                    class="text-base sm:text-lg md:text-xl text-[#4A90E2] leading-relaxed mt-4 hover:text-[#2C6BAC] transition-all duration-300">
+                    Driven by innovation and a relentless pursuit of excellence, I strive to build intelligent, scalable
+                    solutions that
+                    bridge technology and real-world impact.
+                </p>
+
+
+
+                <!-- <p class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                     Hello! I'm Nishant Kumar, a passionate MERN Stack Developer with a knack for creating dynamic and
                     user-friendly web applications. I specialize in building responsive, scalable, and efficient
                     solutions using modern web technologies. With a strong foundation in JavaScript, React, Node.js, and
@@ -200,7 +217,7 @@
                     I am constantly learning and exploring new technologies to stay updated in this ever-evolving field.
                     My goal is to contribute to impactful projects and help businesses achieve their objectives through
                     innovative web solutions.
-                </p>
+                </p> -->
 
                 <!-- Buttons -->
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -458,6 +475,40 @@
             });
         });
     </script>
+
+
+    <p id="typing-text"
+        class="text-base sm:text-lg md:text-xl text-gray-900 leading-relaxed print:text-black print:font-serif print:text-lg hover:text-blue-600 hover:underline transition-all duration-300">
+    </p>
+
+    <script>
+        const text = "Hello! I'm Nishant Kumar, a passionate MERN Stack Developer.";
+        let index = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typing-text");
+
+        function typeEffect() {
+            if (!isDeleting) {
+                typingElement.innerHTML = text.substring(0, index);
+                index++;
+                if (index > text.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000); // Wait before deleting
+                    return;
+                }
+            } else {
+                typingElement.innerHTML = text.substring(0, index);
+                index--;
+                if (index === 0) {
+                    isDeleting = false;
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 50 : 100); // Adjust speed here
+        }
+
+        window.onload = typeEffect;
+    </script>
+
 
 
 </body>
