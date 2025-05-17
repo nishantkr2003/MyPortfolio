@@ -1,5 +1,5 @@
-// npx tailwindcss -i ./input.css -o ./output.css --watch  
-
+// 
+npx tailwindcss -i ./input.css -o ./output.css --watch  
 // Swiper library
 //matter library
 
